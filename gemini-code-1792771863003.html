@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LCM Visuals - Bitácora de Integración IA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Space Grotesk', sans-serif; }
+        .brutal-card {
+            border: 3px solid #000;
+            box-shadow: 5px 5px 0px 0px #000;
+            transition: all 0.15s ease;
+        }
+        .brutal-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 7px 7px 0px 0px #000;
+        }
+        .brutal-btn {
+            border: 3px solid #000;
+            box-shadow: 4px 4px 0px 0px #000;
+            cursor: pointer;
+        }
+        .brutal-btn:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px 0px #000;
+        }
+        .tab-active {
+            background-color: #000 !important;
+            color: #FFE600 !important;
+        }
+    </style>
+</head>
+<body class="bg-[#FFFDF7] text-black min-h-screen flex flex-col selection:bg-[#FFE600]">
+
+    <!-- HEADER / NAVBAR -->
+    <header class="border-b-4 border-black bg-[#FFE600] sticky top-0 z-40 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="bg-black text-[#FFE600] p-2 font-bold text-xl border-2 border-black">LCM</div>
+                <div>
+                    <h1 class="font-bold text-lg tracking-wider">VISUALS LMS</h1>
+                    <p class="text-[10px] font-bold uppercase tracking-widest text-black/70">Bitácora Técnica de Integración</p>
+                </div>
+            </div>
+
+            <!-- NAVEGACIÓN POR PESTAÑAS (TABS) -->
+            <nav class="flex flex-wrap gap-2 text-xs font-bold uppercase">
+                <button type="button" onclick="changeTab('sitemap')" id="btn-sitemap" class="brutal-btn bg-white px-4 py-2 tab-active">
+                    01. Sitemap (13 Pags)
+                </button>
+                <button type="button" onclick="changeTab('backend')" id="btn-backend" class="brutal-btn bg-white px-4 py-2">
+                    02. Backend Apps Script
+                </button>
+                <button type="button" onclick="changeTab('auth')" id="btn-auth" class="brutal-btn bg-white px-4 py-2">
+                    03. Firebase Auth
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-1 max-w-7xl mx-auto p-6 w-full">
+
+        <!-- PESTAÑA 1: SITEMAP (13 PANTALLAS) -->
+        <section id="sec-sitemap" class="space-y-6">
+            <div class="brutal-card bg-white p-6">
+                <span class="bg-[#4D96FF] text-white font-bold text-xs uppercase px-3 py-1 border-2 border-black inline-block mb-3">Fase 01</span>
+                <h2 class="text-3xl font-bold uppercase mb-2">// MAPA DEL SITIO - 13 PANTALLAS</h2>
+                <p class="text-sm font-medium text-slate-700">Estructura completa de navegación del LMS dividida por niveles de acceso y permisos.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- ÁREA PÚBLICA -->
+                <div class="brutal-card bg-[#FFE600] p-6">
+                    <div class="flex items-center justify-between border-b-4 border-black pb-3 mb-4">
+                        <h3 class="font-bold text-lg uppercase">🌐 Área Pública</h3>
+                        <span class="bg-black text-white text-xs px-2 py-0.5 font-bold">5 Pags</span>
+                    </div>
+                    <ul class="space-y-2.5 text-xs font-bold uppercase">
+                        <li class="bg-white p-2 border-2 border-black">01. Landing Page Principal</li>
+                        <li class="bg-white p-2 border-2 border-black">02. Catálogo de Cursos</li>
+                        <li class="bg-white p-2 border-2 border-black">03. Inicio de Sesión (Login)</li>
+                        <li class="bg-white p-2 border-2 border-black">04. Registro de Usuario</li>
+                        <li class="bg-white p-2 border-2 border-black">05. Centro de Ayuda & FAQ</li>
+                    </ul>
+                </div>
+
+                <!-- ÁREA ESTUDIANTES -->
+                <div class="brutal-card bg-[#4D96FF] text-white p-6">
+                    <div class="flex items-center justify-between border-b-4 border-black pb-3 mb-4">
+                        <h3 class="font-bold text-lg uppercase text-black">🎓 Área Estudiante</h3>
+                        <span class="bg-black text-[#4D96FF] text-xs px-2 py-0.5 font-bold">6 Pags</span>
+                    </div>
+                    <ul class="space-y-2.5 text-xs font-bold uppercase text-black">
+                        <li class="bg-white p-2 border-2 border-black">06. Dashboard Estudiante</li>
+                        <li class="bg-white p-2 border-2 border-black">07. Vista de Módulo</li>
+                        <li class="bg-white p-2 border-2 border-black">08. Aula Virtual / Player</li>
+                        <li class="bg-white p-2 border-2 border-black">09. Playground de Práctica</li>
+                        <li class="bg-white p-2 border-2 border-black">10. Tablero Kanban Personal</li>
+                        <li class="bg-white p-2 border-2 border-black">11. Perfil y Ajustes</li>
+                    </ul>
+                </div>
+
+                <!-- ÁREA ADMINISTRADOR -->
+                <div class="brutal-card bg-[#FF6B6B] text-white p-6">
+                    <div class="flex items-center justify-between border-b-4 border-black pb-3 mb-4">
+                        <h3 class="font-bold text-lg uppercase text-black">⚙️ Área Admin</h3>
+                        <span class="bg-black text-[#FF6B6B] text-xs px-2 py-0.5 font-bold">2 Pags</span>
+                    </div>
+                    <ul class="space-y-2.5 text-xs font-bold uppercase text-black">
+                        <li class="bg-white p-2 border-2 border-black">12. Dashboard Admin / Docente</li>
+                        <li class="bg-white p-2 border-2 border-black">13. Validación Kanban & Entregables</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- PESTAÑA 2: BACKEND APPS SCRIPT -->
+        <section id="sec-backend" class="hidden space-y-6">
+            <div class="brutal-card bg-white p-6">
+                <span class="bg-[#6BCB77] text-black font-bold text-xs uppercase px-3 py-1 border-2 border-black inline-block mb-3">Fase 02</span>
+                <h2 class="text-3xl font-bold uppercase mb-2">// CONEXIÓN BACKEND & GOOGLE SHEETS</h2>
+                <p class="text-sm font-medium text-slate-700">Estado del Web App ejecutable en Google Apps Script para sincronización de tareas Kanban.</p>
+            </div>
+
+            <div class="brutal-card bg-[#6BCB77] p-6">
+                <h3 class="font-bold text-lg uppercase mb-3 border-b-4 border-black pb-2">Endpoint Web App URL</h3>
+                <div class="bg-black text-[#6BCB77] p-4 text-xs font-mono rounded border-2 border-black overflow-x-auto break-all font-bold">
+                    https://script.google.com/macros/s/AKfycbzD6jT1CP7Og4HfmFFG9xNnTJEwS7BMuvb9p1yMpiI--HnGcWv1Gb1GWylbuTVYmFgf6A/exec
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="brutal-card bg-white p-5">
+                    <div class="bg-[#FFE600] font-bold text-xs px-2 py-1 border-2 border-black inline-block mb-2">GET</div>
+                    <h4 class="font-bold text-sm uppercase mb-1">Obtener Tareas</h4>
+                    <p class="text-xs text-slate-600">Recupera las filas registradas en la hoja de Google Sheets.</p>
+                </div>
+                <div class="brutal-card bg-white p-5">
+                    <div class="bg-[#6BCB77] font-bold text-xs px-2 py-1 border-2 border-black inline-block mb-2">POST</div>
+                    <h4 class="font-bold text-sm uppercase mb-1">Crear Tarea</h4>
+                    <p class="text-xs text-slate-600">Inserta un nuevo elemento con título, descripción y columna.</p>
+                </div>
+                <div class="brutal-card bg-white p-5">
+                    <div class="bg-[#4D96FF] text-white font-bold text-xs px-2 py-1 border-2 border-black inline-block mb-2">POST</div>
+                    <h4 class="font-bold text-sm uppercase mb-1">Actualizar Estado</h4>
+                    <p class="text-xs text-slate-600">Mueve tarjetas entre Backlog, En Progreso, Revisión y Finalizado.</p>
+                </div>
+                <div class="brutal-card bg-white p-5">
+                    <div class="bg-[#FF6B6B] text-white font-bold text-xs px-2 py-1 border-2 border-black inline-block mb-2">POST</div>
+                    <h4 class="font-bold text-sm uppercase mb-1">Eliminar Tarjeta</h4>
+                    <p class="text-xs text-slate-600">Borra la fila correspondiente mediante su ID único.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PESTAÑA 3: FIREBASE AUTH -->
+        <section id="sec-auth" class="hidden space-y-6">
+            <div class="brutal-card bg-white p-6">
+                <span class="bg-[#FF6B6B] text-white font-bold text-xs uppercase px-3 py-1 border-2 border-black inline-block mb-3">Fase 03</span>
+                <h2 class="text-3xl font-bold uppercase mb-2">// MÓDULO DE AUTENTICACIÓN FIREBASE</h2>
+                <p class="text-sm font-medium text-slate-700">Prueba interactiva del SDK de Firebase Auth (versión compat v10) y proveedor de Google.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="brutal-card bg-[#FFE600] p-6">
+                    <h3 class="font-bold text-lg uppercase mb-4 border-b-4 border-black pb-2">Configuración Firebase</h3>
+                    <ul class="space-y-2 text-xs font-bold uppercase">
+                        <li class="bg-white p-2 border-2 border-black">✓ Firebase Core SDK Loaded</li>
+                        <li class="bg-white p-2 border-2 border-black">✓ Auth Provider: Email & Password</li>
+                        <li class="bg-white p-2 border-2 border-black">✓ Auth Provider: Google OAuth 2.0</li>
+                        <li class="bg-white p-2 border-2 border-black">✓ Observer: onAuthStateChanged</li>
+                    </ul>
+                </div>
+
+                <div class="brutal-card bg-white p-6 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bold text-lg uppercase mb-2 border-b-4 border-black pb-2">Acciones de Prueba</h3>
+                        <p class="text-xs font-medium mb-6 text-slate-600">Simula el inicio de sesión para validar el flujo de estado de usuario.</p>
+                    </div>
+                    <div class="space-y-3">
+                        <button type="button" onclick="alert('Iniciando prueba de autenticación por Correo...')" class="brutal-btn bg-[#6BCB77] text-black font-bold text-xs uppercase w-full py-3">
+                            Probar Login Correo / Password _
+                        </button>
+                        <button type="button" onclick="alert('Iniciando prueba de Google Sign-In...')" class="brutal-btn bg-[#FF6B6B] text-white font-bold text-xs uppercase w-full py-3">
+                            Probar Login con Google OAuth _
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t-4 border-black bg-white py-6 text-center font-bold text-xs uppercase">
+        <p>LCM Visuals &copy; 2026 — Bitácora del Sprint</p>
+    </footer>
+
+    <!-- LÓGICA DE CAMBIO DE PESTAÑAS (JS CORREGIDO) -->
+    <script>
+        function changeTab(targetTab) {
+            // Ocultar todas las secciones
+            document.getElementById('sec-sitemap').classList.add('hidden');
+            document.getElementById('sec-backend').classList.add('hidden');
+            document.getElementById('sec-auth').classList.add('hidden');
+
+            // Quitar clase activa a los botones
+            document.getElementById('btn-sitemap').classList.remove('tab-active');
+            document.getElementById('btn-backend').classList.remove('tab-active');
+            document.getElementById('btn-auth').classList.remove('tab-active');
+
+            // Mostrar sección seleccionada y activar botón
+            document.getElementById('sec-' + targetTab).classList.remove('hidden');
+            document.getElementById('btn-' + targetTab).classList.add('tab-active');
+        }
+    </script>
+</body>
+</html>
